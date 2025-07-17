@@ -9,11 +9,11 @@ const cardData = [
     id: "nori",
     name: "KB 노리 체크카드",
     image: "images/nori.png.png",
-    details: "KB Pay 결제 시 넷플릭스, 커피, 영화 등 콘텐츠 소비에 강력한 혜택을 제공합니다."
+    details: "넷플릭스, 커피, 영화 등 콘텐츠 소비에 강력한 혜택을 제공합니다."
   },
   {
     id: "teenup",
-    name: "KB 틴업 체크카드 (헤어리 스프링)",
+    name: "KB 틴업 체크카드",
     image: "images/tniping.png",
     details: "청소년 전용 카드로 대중교통 할인, 포인트 적립이 가능합니다."
   },
@@ -60,21 +60,25 @@ function getQueryParam(param) {
 
 window.onload = function () {
   const cardId = getQueryParam("cardId");
+  const from = getQueryParam("from");
   let card = cardData.find(c => c.id === cardId);
-
-  // ✅ cardId가 없거나 잘못된 경우 → 첫 번째 카드 보여주기
-  if (!card) {
-    card = cardData[0];
-  }
+  if (!card) card = cardData[0];
 
   const container = document.getElementById("cardDetail");
-
   container.innerHTML = `
     <div style="max-width: 400px; margin: auto; text-align: center;">
-      <img src="${card.image}" alt="${card.name}" style="max-width: 100%; border-radius: 10px;" onerror="this.src='images/nori.png.png'">
+      <img src="${card.image}" alt="${card.name}" style="max-width: 100%; border-radius: 10px;" />
       <h2>${card.name}</h2>
       <p>${card.details}</p>
-      <a href="index.html">← 돌아가기</a>
+      <button id="backBtn">← 돌아가기</button>
     </div>
   `;
+
+  document.getElementById("backBtn").addEventListener("click", () => {
+    if (from) {
+      window.location.href = decodeURIComponent(from);
+    } else {
+      window.location.href = "index.html";
+    }
+  });
 };
