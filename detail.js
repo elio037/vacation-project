@@ -26,30 +26,30 @@ const cardData = [
   {
   id: "kakao",
   name: "카카오페이 체크카드",
-  benefits: ["point", "convenience", "fun"],
   description: "귀여운 디자인과 다양한 제휴 할인 혜택 제공",
-  image: "images/kakao.png.png"
+  image: "images/kakao.png.png",
+  details:"카카오페이 결제 시 적립, 대중교통기능, 영화 할인이 가능합니다"
 },
 {
   id: "mgcard",
   name: "새마을금고 더나은 체크카드",
-  benefits: ["transport", "youth", "design"],
   description: "청소년 전용 혜택과 감성 일러스트",
-  image: "images/mgcard.png.png"
+  image: "images/mgcard.png.png",
+  details:"간편 결제 할인과 온라인쇼핑, 커피전문점 할인등 할인에 특화된 카드입니다"
 },
 {
   id: "kpass",
   name: "NH농협 티켓 체크카드",
-  benefits: ["transport", "metro", "bus"],
   description: "지하철·버스 통합 교통 기능 포함",
-  image: "images/kpass.png.png"
+  image: "images/kpass.png.png",
+  details:"대중교통 할인과 자동차 관련 할인이 많이 있습니다."
 },
 {
   id: "onecheck",
   name: "신한 Wallace & Gromit 카드",
-  benefits: ["fun", "design"],
   description: "월레스와 그로밋 캐릭터 카드로 개성 표현",
-  image: "images/onecheck.png.png"
+  image: "images/onecheck.png.png",
+  details:"캐시백에 특화된 카드입니다."
 }
 ];
 
